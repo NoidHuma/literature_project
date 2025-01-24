@@ -30,10 +30,12 @@
   
   .card {
     background-color: darkslategrey;
-    width: 30%; /* Примерный размер квадрата */
-    margin: 0 10px; /* Отступы между квадратами */
+    width: 25%; /* Примерный размер квадрата */
+    margin: 30px 20px; /* Отступы между квадратами */
     padding: 10px;
     text-align: center;
+    text-decoration: none;
+    color: inherit; /* Сохраняем цвет текста как обычного */
   }
   
   .card-image {

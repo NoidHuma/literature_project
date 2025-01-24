@@ -14,18 +14,26 @@
   </div>
 
   <div class="content">
-    <div class="card">
+
+    <%= link_to books_path, class: 'card' do %>
+    <div>
       <%= image_tag asset_path('/images/home1.png'), class: 'card-image' %>
-      <p>Книги</p>
+      <h2>Книги</h2>
     </div>
-    <div class="card">
+    <% end %>
+    <%= link_to books_path, class: 'card' do %>
+    <div>
       <%= image_tag asset_path('/images/home2.png'), class: 'card-image' %>
-      <p>Авторы</p>
+      <h2>Авторы</h2>
     </div>
-    <div class="card">
+    <% end %>
+    <%= link_to books_path, class: 'card' do %>
+    <div>
       <%= image_tag asset_path('/images/home3.png'), class: 'card-image' %>
-      <p>Издательства</p>
+      <h2>Издательства</h2>
     </div>
+    <% end %>
+
   </div>
 </body>
 </html>
