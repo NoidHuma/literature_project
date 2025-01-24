@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Литература</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+</head>
+
+<body>
+  <div class="header">
+    <h1>Литература</h1>
+  </div>
+
+  <div class="content">
+    <div class="card">
+      <%= image_tag asset_path('/images/home1.png'), class: 'card-image' %>
+      <p>Книги</p>
+    </div>
+    <div class="card">
+      <%= image_tag asset_path('/images/home2.png'), class: 'card-image' %>
+      <p>Авторы</p>
+    </div>
+    <div class="card">
+      <%= image_tag asset_path('/images/home3.png'), class: 'card-image' %>
+      <p>Издательства</p>
+    </div>
+  </div>
+</body>
+</html>

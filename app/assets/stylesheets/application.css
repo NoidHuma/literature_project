@@ -8,3 +8,37 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+ body {
+    background-color: darkseagreen;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .header {
+    background-color: darkslategrey;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .content {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .card {
+    background-color: darkslategrey;
+    width: 30%; /* Примерный размер квадрата */
+    margin: 0 10px; /* Отступы между квадратами */
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .card-image {
+    max-width: 100%; /* Ограничение ширины изображений */
+    height: auto; /* Автоматическая высота */
+    margin-bottom: 10px; /* Отступ между изображением и подписью */
+  }
+  
