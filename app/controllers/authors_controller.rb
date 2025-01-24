@@ -33,9 +33,9 @@ class AuthorsController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
     @author = Author.find(params[:id])
-    @author.delete
+    @author.destroy
     redirect_to authors_url, notice: 'Author was successfully destroyed.'
   end
 
