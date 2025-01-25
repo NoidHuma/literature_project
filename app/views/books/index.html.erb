@@ -17,8 +17,9 @@
     <table class="data-table">
       <thead>
         <tr>
-          <th>Название</th>
-          <th>Автор</th>
+          <th class="norm-thead">Название</th>
+          <th class="norm-thead">Автор</th>
+          <th class="button-cell"></th>
         </tr>
       </thead>
       <tbody>
@@ -27,7 +28,7 @@
             <td class="seagreen-cell"><%= book.title %></td>
             <td class="seagreen-cell"><%= book.author&.full_name %></td>
             <td class="button-cell">
-              <%= link_to 'Show', book, class: 'show-button' %>
+              <%= link_to 'Show', book, class: 'small-button' %>
             </td>
           </tr>
         <% end %>

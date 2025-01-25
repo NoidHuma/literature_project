@@ -1,42 +1,56 @@
 /*
- * This is a manifest file that'll be compiled into application.css.
- *
- * With Propshaft, assets are served efficiently without preprocessing steps. You can still include
- * application-wide styles in this file, but keep in mind that CSS precedence will follow the standard
- * cascading order, meaning styles declared later in the document or manifest will override earlier ones,
- * depending on specificity.
- *
- * Consider organizing styles into separate files for maintainability.
- */
-  body {
+* This is a manifest file that'll be compiled into application.css.
+*
+* With Propshaft, assets are served efficiently without preprocessing steps. You can still include
+* application-wide styles in this file, but keep in mind that CSS precedence will follow the standard
+* cascading order, meaning styles declared later in the document or manifest will override earlier ones,
+* depending on specificity.
+*
+* Consider organizing styles into separate files for maintainability.
+*/
+body {
     background-color: darkseagreen;
     color: white;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-  }
-  
-  .header {
+}
+
+.header {
     background-color: darkslategrey;
     text-align: center;
     padding: 20px;
-  }
-  
-  .content-home {
+}
+
+.content-home {
     display: flex;
     justify-content: center;
     align-items: flex-start;
     margin-top: 20px;
-  }
+}
 
-  .content-table {
+.content-table {
     display: flex;
     justify-content: center;
     align-items: flex-start;
     margin-top: 60px;
-  }
-  
-  .card {
+}
+
+.content-form-flex {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    margin-top: 60px;
+}
+
+.content-form {
+    background-color: seagreen;
+    padding: 20px;
+    margin: 0 80px 0 0;
+}
+
+
+.card {
     background-color: darkslategrey;
     width: 25%; /* Примерный размер квадрата */
     margin: 30px 20px; /* Отступы между квадратами */
@@ -44,74 +58,74 @@
     text-align: center;
     text-decoration: none;
     color: inherit; /* Сохраняем цвет текста как обычного */
-  }
-  
-  .card-image {
+}
+
+.card-image {
     max-width: 100%; /* Ограничение ширины изображений */
     height: auto; /* Автоматическая высота */
     margin-bottom: 10px; /* Отступ между изображением и подписью */
-  }
+}
 
-  
 
-  /* Общий стиль для таблицы */
-  .data-table {
+
+/* Общий стиль для таблицы */
+.data-table {
     width: 70%;
     border-collapse: collapse;
-    text-align: left;
-  }
-  
-  /* Стиль шапки таблицы */
-  .data-table thead {
+}
+
+/* Стиль шапки таблицы */
+.data-table thead {
     background-color: darkslategrey;
-  }
-  
-  .data-table thead th {
+}
+
+.norm-thead {
     border: 2px solid black;
     padding: 10px;
     text-align: center;
-  }
-  
-  .seagreen-cell {
+}
+
+.seagreen-cell {
     background-color: seagreen;
     border: 2px solid black;
     padding: 10px;
     text-align: center;
-  }
-  
-  /* Ячейки столбца с кнопками */
-  .button-cell {
+}
+
+/* Ячейки столбца с кнопками */
+.button-cell {
     background-color: darkseagreen;
     border: none;
     padding: 10px;
     width: 10%;
-  }
-  
-  /* Кнопка "Show" */
-  .show-button {
+}
+
+/* Кнопка "Show" */
+.small-button {
     background-color: darkslategrey;
     text-decoration: none;
     color: inherit;
     padding: 5px 10px;
     border-radius: 5px;
     border: none;
-  }
-  
-  .show-button:hover {
-    background-color:seagreen;
-  }
+}
 
-  .button-container {
+.small-button:hover {
+    background-color:rgb(31, 95, 59);
+}
+
+.button-container {
+    margin: 0 20px;
     display: flex;
     flex-direction: column; /* Расположение элементов в столбец */
     gap: 20px; 
     justify-content: space-between; /* Равномерные промежутки между кнопками */
-  }
-  
-  /* Кнопка "New Book" */
-  .middle-button {
+}
+
+/* Кнопка "New Book" */
+.middle-button {
     display: block;
-    margin: auto;
+    margin: 0 0;
     padding: 30px 20px;
     background-color: darkslategrey;
     text-decoration: none;
@@ -120,10 +134,36 @@
     text-align: center;
     width: 200px;
     border: none;
-  }
-  
-  .middle-button:hover {
-    background-color: seagreen;
-  }
-  
-  
+}
+
+.middle-button:hover {
+    background-color: rgb(31, 95, 59);
+}
+
+.delete-button {
+    display: block;
+    margin: 0 0;
+    padding: 30px 20px;
+    background-color: darkslategrey;
+    text-decoration: none;
+    color: inherit;
+    border-radius: 5px;
+    text-align: center;
+    width: 240px;
+    border: none;
+    font-family: Arial, sans-serif;
+    font-size: medium;
+}
+
+
+.delete-button:hover {
+    background-color: rgb(31, 95, 59);
+}
+
+.field {
+    margin: 10px;
+    display: flex;
+    justify-content:space-between;
+    align-items: flex-start;
+    width: 350px;
+}

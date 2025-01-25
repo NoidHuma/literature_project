@@ -1,4 +1,36 @@
-<h1><%= @publisher.name %></h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= @publisher.name %></title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-<%= link_to 'Edit', edit_publisher_path(@publisher) %> |
-<%= link_to 'Back to Publishers', publishers_path %> 
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+</head>
+
+<body>
+  <div class="header">
+    <h1><%= @publisher.name %></h1>
+  </div>
+
+  <div class="content-form-flex">
+    <div class="content-form">
+      <p><strong>Название:</strong> <%= @publisher.name %></p>
+      <p><strong>Адрес:</strong> <%= @publisher.address || 'Не указан' %></p>
+      <p><strong>Телефон:</strong> <%= @publisher.phone || 'Не указан' %></p>
+    </div>
+
+    <div class="button-container">
+      <%= link_to 'Редактировать', edit_publisher_path(@publisher), class: 'middle-button' %>
+      <%= button_to 'Удалить', publisher_path(@publisher), method: :delete, data: { confirm: 'Вы уверены?' }, class: 'delete-button' %>
+    </div>
+
+    <div class="button-container">
+      <%= link_to 'Книги', books_path, class: 'middle-button' %>
+      <%= link_to 'Авторы', authors_path, class: 'middle-button' %>
+      <%= link_to 'Издательства', publishers_path, class: 'middle-button' %>
+      <%= link_to 'Главная страница', home_index_path, class: 'middle-button' %>
+    </div>
+  </div>
+</body>
+</html>

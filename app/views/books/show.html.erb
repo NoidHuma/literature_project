@@ -1,8 +1,37 @@
-<h1><%= @book.title %></h1>
-<p><strong>Author:</strong> <%= @book.author&.full_name %></p>
-<p><strong>Publisher:</strong> <%= @book.publisher&.name %></p>
-<p><strong>Publication Date:</strong> <%= @book.publication_date %></p>
-<p><strong>Genre:</strong> <%= @book.genre %></p>
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= @book.title %></title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-<%= link_to 'Edit', edit_book_path(@book) %> |
-<%= link_to 'Back to Books', books_path %>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+</head>
+
+<body>
+  <div class="header">
+    <h1><%= @book.title %></h1>
+  </div>
+
+  <div class="content-form-flex">
+    <div class="content-form">
+      <p><strong>Автор:</strong> <%= @book.author&.full_name || 'Не указан' %></p>
+      <p><strong>Издательство:</strong> <%= @book.publisher&.name || 'Не указано' %></p>
+      <p><strong>Дата публикации:</strong> <%= @book.publication_date || 'Не указана' %></p>
+      <p><strong>Жанр:</strong> <%= @book.genre || 'Не указан' %></p>
+    </div>
+
+    <div class="button-container">
+      <%= link_to 'Редактировать', edit_book_path(@book), class: 'middle-button' %>
+      <%= button_to 'Удалить', book_path(@book), method: :delete, data: { confirm: 'Вы уверены?' }, class: 'delete-button' %>
+    </div>
+
+    <div class="button-container">
+      <%= link_to 'Книги', books_path, class: 'middle-button' %>
+      <%= link_to 'Авторы', authors_path, class: 'middle-button' %>
+      <%= link_to 'Издательства', publishers_path, class: 'middle-button' %>
+      <%= link_to 'Главная страница', home_index_path, class: 'middle-button' %>
+    </div>
+  </div>
+</body>
+</html>

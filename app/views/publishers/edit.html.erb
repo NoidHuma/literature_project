@@ -1,25 +1,60 @@
-<h1>Edit Publisher</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Редактировать издательство</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-<%= form_with(model: @publisher, local: true) do |form| %> 
-  <% if @publisher.errors.any? %> 
-    <div id="error_explanation"> 
-      <h2><%= pluralize(@publisher.errors.count, "error") %> prohibited this publisher from being saved:</h2>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+</head>
 
-      <ul> 
-        <% @publisher.errors.full_messages.each do |message| %> 
-          <li><%= message %></li> 
-        <% end %> 
-      </ul> 
-    </div> 
-  <% end >
-  <div class="field"> 
-    <%= form.label :name% > 
-    <%= form.text_field :name% > 
-  </div >
+<body>
+  <div class="header">
+    <h1>Редактировать издательство</h1>
+  </div>
 
-  <div class="actions"> 
-    <%= form.submit% > 
-  </div > 
-<% end > 
+  <div class="content-form-flex">
+    <div class="content-form">
+      <%= form_with(model: @publisher, local: true) do |form| %>
+        <% if @publisher.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@publisher.errors.count, "error") %>
+              запрещают сохранить издательство:</h2>
+            <ul>
+              <% @publisher.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
 
-<% = link_to 'Back to Publishers', publishers_path% >
+        <div class="field">
+          <%= form.label "Название" %>
+          <%= form.text_field :name %>
+        </div>
+
+        <div class="field">
+          <%= form.label "Адрес" %>
+          <%= form.text_field :address %>
+        </div>
+
+        <div class="field">
+          <%= form.label "Телефон" %>
+          <%= form.text_field :phone %>
+        </div>
+
+        <div class="actions">
+          <%= form.submit 'Сохранить изменения', class: 'small-button' %>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="button-container">
+      <%= link_to 'Книги', books_path, class: 'middle-button' %>
+      <%= link_to 'Авторы', authors_path, class: 'middle-button' %>
+      <%= link_to 'Издательства', publishers_path, class: 'middle-button' %>
+      <%= link_to 'Главная страница', home_index_path, class: 'middle-button' %>
+    </div>
+  </div>
+</body>
+</html>

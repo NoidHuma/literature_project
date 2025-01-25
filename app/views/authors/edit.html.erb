@@ -1,41 +1,65 @@
-<h1>Edit Author</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Редактировать автора</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-<%= form_with(model: @author, local: true) do |form| %>
-  <% if @author.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@author.errors.count, "error") %> prohibited this author from being saved:</h2>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+</head>
 
-      <ul>
-        <% @author.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
+<body>
+  <div class="header">
+    <h1>Редактировать автора</h1>
+  </div>
+
+  <div class="content-form-flex">
+    <div class="content-form">
+      <%= form_with(model: @author, local: true) do |form| %>
+        <% if @author.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@author.errors.count, "error") %>
+              запрещают сохранить автора:</h2>
+            <ul>
+              <% @author.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
         <% end %>
-      </ul>
+
+        <div class="field">
+          <%= form.label "Имя" %>
+          <%= form.text_field :first_name %>
+        </div>
+
+        <div class="field">
+          <%= form.label "Фамилия" %>
+          <%= form.text_field :last_name %>
+        </div>
+
+        <div class="field">
+          <%= form.label "Дата рождения" %>
+          <%= form.date_field :birth_date %>
+        </div>
+
+        <div class="field">
+          <%= form.label "Национальность" %>
+          <%= form.text_field :nationality %>
+        </div>
+
+        <div class="actions">
+          <%= form.submit 'Сохранить изменения', class: 'small-button' %>
+        </div>
+      <% end %>
     </div>
-  <% end %>
 
-  <div class="field">
-    <%= form.label :first_name %>
-    <%= form.text_field :first_name %>
+    <div class="button-container">
+      <%= link_to 'Книги', books_path, class: 'middle-button' %>
+      <%= link_to 'Авторы', authors_path, class: 'middle-button' %>
+      <%= link_to 'Издательства', publishers_path, class: 'middle-button' %>
+      <%= link_to 'Главная страница', home_index_path, class: 'middle-button' %>
+    </div>
   </div>
-
-  <div class="field">
-    <%= form.label :last_name %>
-    <%= form.text_field :last_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :birth_date %>
-    <%= form.date_field :birth_date %>
-  </div>
-
-  <div class="field">
-    <%= form.label :nationality %>
-    <%= form.text_field :nationality %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
-
-<%= link_to 'Back to Authors', authors_path %>  
+</body>
+</html>
