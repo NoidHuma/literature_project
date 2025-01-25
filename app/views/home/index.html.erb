@@ -13,7 +13,7 @@
     <h1>Литература</h1>
   </div>
 
-  <div class="content">
+  <div class="content-home">
 
     <%= link_to books_path, class: 'card' do %>
     <div>
@@ -21,13 +21,13 @@
       <h2>Книги</h2>
     </div>
     <% end %>
-    <%= link_to books_path, class: 'card' do %>
+    <%= link_to authors_path, class: 'card' do %>
     <div>
       <%= image_tag asset_path('/images/home2.png'), class: 'card-image' %>
       <h2>Авторы</h2>
     </div>
     <% end %>
-    <%= link_to books_path, class: 'card' do %>
+    <%= link_to publishers_path, class: 'card' do %>
     <div>
       <%= image_tag asset_path('/images/home3.png'), class: 'card-image' %>
       <h2>Издательства</h2>

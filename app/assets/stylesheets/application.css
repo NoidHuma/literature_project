@@ -8,7 +8,7 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
- body {
+  body {
     background-color: darkseagreen;
     color: white;
     font-family: Arial, sans-serif;
@@ -22,10 +22,18 @@
     padding: 20px;
   }
   
-  .content {
+  .content-home {
     display: flex;
     justify-content: center;
+    align-items: flex-start;
     margin-top: 20px;
+  }
+
+  .content-table {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 60px;
   }
   
   .card {
@@ -43,4 +51,79 @@
     height: auto; /* Автоматическая высота */
     margin-bottom: 10px; /* Отступ между изображением и подписью */
   }
+
+  
+
+  /* Общий стиль для таблицы */
+  .data-table {
+    width: 70%;
+    border-collapse: collapse;
+    text-align: left;
+  }
+  
+  /* Стиль шапки таблицы */
+  .data-table thead {
+    background-color: darkslategrey;
+  }
+  
+  .data-table thead th {
+    border: 2px solid black;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .seagreen-cell {
+    background-color: seagreen;
+    border: 2px solid black;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  /* Ячейки столбца с кнопками */
+  .button-cell {
+    background-color: darkseagreen;
+    border: none;
+    padding: 10px;
+    width: 10%;
+  }
+  
+  /* Кнопка "Show" */
+  .show-button {
+    background-color: darkslategrey;
+    text-decoration: none;
+    color: inherit;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+  }
+  
+  .show-button:hover {
+    background-color:seagreen;
+  }
+
+  .button-container {
+    display: flex;
+    flex-direction: column; /* Расположение элементов в столбец */
+    gap: 20px; 
+    justify-content: space-between; /* Равномерные промежутки между кнопками */
+  }
+  
+  /* Кнопка "New Book" */
+  .middle-button {
+    display: block;
+    margin: auto;
+    padding: 30px 20px;
+    background-color: darkslategrey;
+    text-decoration: none;
+    color: inherit;
+    border-radius: 5px;
+    text-align: center;
+    width: 200px;
+    border: none;
+  }
+  
+  .middle-button:hover {
+    background-color: seagreen;
+  }
+  
   

@@ -1,19 +1,44 @@
-<h1 class="aboba">Authors</h1>
-<%= link_to 'New Author', new_author_path %>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Авторы</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-  <tbody>
-    <% @authors.each do |author| %>
-      <tr>
-        <td><%= author.full_name %></td>
-        <td><%= link_to 'Show', author %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+</head>
+
+<body>
+  <div class="header">
+    <h1>Авторы</h1>
+  </div>
+
+  <div class="content-table">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Полное имя</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @authors.each do |author| %>
+          <tr>
+            <td class="seagreen-cell"><%= author.full_name %></td>
+            <td class="button-cell">
+              <%= link_to 'Show', author, class: 'show-button' %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <div class="button-container">
+      <%= link_to 'Добавить автора', new_author_path, class: 'middle-button' %>
+      <%= link_to 'Книги', books_path, class: 'middle-button' %>
+      <%= link_to 'Издательства', publishers_path, class: 'middle-button' %>
+      <%= link_to 'Главная страница', home_index_path, class: 'middle-button' %>
+    </div>
+  </div>
+
+</body>
+</html>
+
